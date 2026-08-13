@@ -7,7 +7,7 @@ services:
     buildCommand: >
       pip install --upgrade pip &&
       pip install -r requirements.txt &&
-      playwright install --with-deps chromium
+      python -m playwright install chromium
 
     startCommand: >
       gunicorn app:app
@@ -34,14 +34,11 @@ services:
       - key: WAIT_AFTER_LOAD
         value: "5"
 
-      # Optional:
-      # Set this in Render Dashboard instead of putting
-      # the actual secret in GitHub.
+      - key: CORS_ORIGINS
+        value: "*"
+
+      # Optional API protection.
+      # Set the value manually in Render.
       #
       # - key: API_KEY
       #   sync: false
-
-      # Optional:
-      #
-      # - key: CORS_ORIGINS
-      #   value: "*"
