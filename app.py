@@ -22,12 +22,12 @@ WAIT_AFTER_LOAD = float(os.environ.get("WAIT_AFTER_LOAD", "5"))
 
 # Only allow these hosts by default.
 # Add more hosts with:
-# ALLOWED_HOSTS=vidstorm.ru,www.vidstorm.ru
+# ALLOWED_HOSTS=vixsrc.to,www.vixsrc.to
 ALLOWED_HOSTS = {
     host.strip().lower()
     for host in os.environ.get(
         "ALLOWED_HOSTS",
-        "vidstorm.ru,www.vidstorm.ru"
+        "vixsrc.to,www.vixsrc.to"
     ).split(",")
     if host.strip()
 }
